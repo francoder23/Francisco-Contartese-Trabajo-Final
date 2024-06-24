@@ -1,26 +1,20 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-Producto | Categoria de Productos
+Producto | Categoría de Productos
 {% endblock title %}
  
 {% block body_title %}
 {% if form.instance.pk %}
-     Producto - Categorias de Producto: Descartar
-
+    Producto - Categorías de Producto: Descartar
+{% endif %}
 {% endblock body_title %}
 
 {% block content %}
-
-<p class="fs-5 fst-italic">¿ Estas seguro que quieres descartar los cambios de "{{ object.nombre }}"?</p>
+<p class="fs-5 fst-italic">¿Estás seguro que quieres descartar los cambios de "{{ object.nombre }}"?</p>
 <form method="post">
   {% csrf_token %}
- 
   <button type="submit">Confirmar</button>
-
 </form>
 <a href="{% url 'producto:index' %}">Regresar</a>
 {% endblock content %}
-
-
- 
